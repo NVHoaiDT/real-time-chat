@@ -1,4 +1,4 @@
-package mypackage;
+package controller;
 
 import java.io.File;
 

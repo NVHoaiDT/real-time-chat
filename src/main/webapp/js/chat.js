@@ -9,58 +9,58 @@ let in_id = document.getElementById("incoming_id").value;
 
 
  // Submit data to server
-   function submitForm() {
+function submitForm() {
 
-         	var form1 = document.getElementById("message_box");
-            var formData = new FormData(form1);
+        var form1 = document.getElementById("message_box");
+        var formData = new FormData(form1);
 
-			let msg = document.getElementById("message").value;
+        let msg = document.getElementById("message").value;
 
-			msg = msg.replaceAll(" ", "__5oO84a9__");
+        msg = msg.replaceAll(" ", "__5oO84a9__");
 
-            // Send the form data using Ajax
-            var xhr = new XMLHttpRequest();
-            var url = "insertChat?outgoing_id=" + encodeURIComponent(out_id) + "&incoming_id=" + encodeURIComponent(in_id)+ "&message=" + encodeURIComponent(msg);
+        // Send the form data using Ajax
+        var xhr = new XMLHttpRequest();
+        var url = "insertChat?outgoing_id=" + encodeURIComponent(out_id) + "&incoming_id=" + encodeURIComponent(in_id)+ "&message=" + encodeURIComponent(msg);
 
-            xhr.open("POST", url, true);
+        xhr.open("POST", url, true);
 
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    inputField.value = "";
-                    scrollToBottom();
-                }
-            };
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                inputField.value = "";
+                scrollToBottom();
+            }
+        };
 
-            xhr.send();
-       } 
+        xhr.send();
+   }
 
-  // Get data from server
-  function sendGetRequest() {
-      // Define the URL servlet page
-      var servletURL = "get_chat?outgoing_id=" + encodeURIComponent(out_id) + "&incoming_id=" + encodeURIComponent(in_id);
+// Get data from server
+function sendGetRequest() {
+  // Define the URL servlet page
+  var servletURL = "get_chat?outgoing_id=" + encodeURIComponent(out_id) + "&incoming_id=" + encodeURIComponent(in_id);
 
-      // Send a GET request using the fetch API
-      fetch(servletURL, {
-        method: 'GET',
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.text(); // or response.json() if the servlet returns JSON
-        })
-        .then(data => {
-             // Process the response data
-             console.log(data);
-             chatBox.innerHTML = data;
+  // Send a GET request using the fetch API
+  fetch(servletURL, {
+    method: 'GET',
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text(); // or response.json() if the servlet returns JSON
+    })
+    .then(data => {
+         // Process the response data
+         console.log(data);
+         chatBox.innerHTML = data;
 
-             if(!chatBox.classList.contains("active")){
-                 scrollToBottom();
-             }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
+         if(!chatBox.classList.contains("active")){
+             scrollToBottom();
+         }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 }
 
 

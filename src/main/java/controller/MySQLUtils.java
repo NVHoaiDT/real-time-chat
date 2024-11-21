@@ -1,4 +1,4 @@
-package mypackage;
+package controller;
 
 public class MySQLUtils {
 	public static String mysql_real_escape_string(java.sql.Connection link, String str) throws Exception {

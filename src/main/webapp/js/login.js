@@ -10,6 +10,7 @@ const errorText = form.querySelector(".error-txt");
                 type: "POST",
                 url: "login",
                 data: formData,
+
                 success: function(response) {
                     // Handle the response from the JSP page
                     $("#error_text").html(response);

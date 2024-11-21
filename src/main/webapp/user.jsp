@@ -1,9 +1,9 @@
-<%@page import="mypackage.Const"%>
+<%@page import="controller.Const"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.SQLException"%>
-<%@page import="mypackage.DatabaseConfig"%>
+<%@page import="controller.DatabaseConfig"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
 
 <%	

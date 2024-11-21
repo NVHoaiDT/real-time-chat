@@ -26,7 +26,7 @@
 
     <servlet>
         <servlet-name>signup</servlet-name>
-        <servlet-class>mypackage.SignupServlet</servlet-class>
+        <servlet-class>controller.SignupServlet</servlet-class>
 
         <multipart-config>
             <max-file-size>10485760</max-file-size>
@@ -42,7 +42,7 @@
 
     <servlet>
         <servlet-name>login</servlet-name>
-        <servlet-class>mypackage.loginServlet</servlet-class>
+        <servlet-class>controller.loginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -61,7 +61,7 @@
 
     <servlet>
         <servlet-name>users</servlet-name>
-        <servlet-class>mypackage.UserServlet</servlet-class>
+        <servlet-class>controller.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>users</servlet-name>
@@ -81,7 +81,7 @@
 
     <servlet>
         <servlet-name>search</servlet-name>
-        <servlet-class>mypackage.SearchRequestHandler</servlet-class>
+        <servlet-class>controller.SearchRequestHandler</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>search</servlet-name>
@@ -90,7 +90,7 @@
 
     <servlet>
         <servlet-name>insert_chat</servlet-name>
-        <servlet-class>mypackage.InsertChatServlet</servlet-class>
+        <servlet-class>controller.InsertChatServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>insert_chat</servlet-name>
@@ -110,7 +110,7 @@
 
     <servlet>
         <servlet-name>get_chat</servlet-name>
-        <servlet-class>mypackage.GetChatServlet</servlet-class>
+        <servlet-class>controller.GetChatServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>get_chat</servlet-name>

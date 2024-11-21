@@ -1,4 +1,7 @@
-package mypackage;
+package controller;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -7,21 +10,10 @@ import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Time;
+import java.sql.*;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.regex.Pattern;
-
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import jakarta.servlet.http.Part;
 
 public class SignupServlet extends HttpServlet {
 
@@ -43,7 +35,6 @@ public class SignupServlet extends HttpServlet {
 		Part filePart = req.getPart("image");
 		String fileName = getFileName(filePart);
 		InputStream imageInputStream = filePart.getInputStream();
-
 
 
 
